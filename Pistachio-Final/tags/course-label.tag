@@ -1,4 +1,5 @@
 <course-label>
+<<<<<<< HEAD
     <div>
         <span>Course Code</span>
         <input type="text" ref="department" value="">
@@ -73,4 +74,9 @@
 
     </style>
 
+=======
+<div class="">
+  label
+</div>
+>>>>>>> origin/master
 </course-label>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/pistachio.css">
 </head>
 
 <body>
@@ -21,13 +21,25 @@
             </div>
         </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/3.7.8/firebase.js"></script>
 
+    <script>
+    // Initialize Firebase
+    var config = {
+    apiKey: "AIzaSyBKPJA1TjsGfJfUc6EquJyMK4712YsB8-E",
+    authDomain: "pistachio-e53b7.firebaseapp.com",
+    databaseURL: "https://pistachio-e53b7.firebaseio.com",
+    projectId: "pistachio-e53b7",
+    storageBucket: "pistachio-e53b7.appspot.com",
+    messagingSenderId: "660787827479"
+    };
+    firebase.initializeApp(config);
+    </script>
 
     <script src="./tags/course-app.tag" type="riot/tag"></script>
     <script src="./tags/course-label.tag" type="riot/tag"></script>
+    <script src="tags/course-list.tag" type="riot/tag"></script>
 
-    <!-- Load RiotJS and the COMPILER, which will transform your tags into JS -->
-    <script src="https://cdn.jsdelivr.net/riot/3.0/riot+compiler.min.js"></script>
     <script src="https://cdn.jsdelivr.net/riot/3.1/riot+compiler.js"></script>
 
   	<script>
@@ -37,31 +49,3 @@
 </body>
 
 </html>
-
-
-<!-- <h1> Search here </h1>
-<input type="text" name="search" placeholder="Search.."> -->
-<!-- <h1> Tag course here </h1>
-<div class="course tag">
-<form>
-  Course name:<br>
-  <input type="text" name="coursename">
-  <br>
-  Department:<br>
-  <input type="text" name="department">
-  <br>
-  Tag:<br>
-  <input type="text" name="tag1">
-  <br>
-    <input type="text" name="tag2">
-    <br>
-      <input type="text" name="tag3">
-      <br>
-  Comment in one sentence:<br>
-  <input type="text" name="comment">
-  <br>
-  <input type="submit" value="Submit">
-
-
-</form>
-</div> -->

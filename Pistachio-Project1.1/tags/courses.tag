@@ -40,7 +40,7 @@
         this.composingEvaluation = false;
 
         this.toggleEvaluation = function (event) {
-            console.count('jin');
+            // console.count('jin');
             this.composingEvaluation = true;
         };
         console.log(this);
@@ -48,6 +48,7 @@
             that.composingEvaluation = false;
             that.update();
         };
+
         this.commentList = [
             {
                 studentProfile: "M.A Instructional Technology and Media",

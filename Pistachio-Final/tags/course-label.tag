@@ -1,10 +1,10 @@
 <course-label>
-<<<<<<< HEAD
     <div>
         <span>Course Code</span>
         <input type="text" ref="department" value="">
         <span>Course Name</span>
         <input type="text" ref="courseName" value="">
+
     </div>
 
     <div>
@@ -29,6 +29,8 @@
 
         var database = firebase.database();
         var departmentRef = database.ref('department');
+        //Is there anything wrong here??
+        var tagRef = database.ref('tag');
 
         submitEvaluation(event) {
             console.log(event)
@@ -39,20 +41,19 @@
             newCourse.tag3 = this.refs.courseTag3.value;
             newCourse.tag4 = this.refs.courseTag4.value;
             newCourse.tag5 = this.refs.courseTag5.value;
-
             // push a new node to the 'Department' reference. - this is unique key (do you want the unique key or named key? ) how to garb the user input courseCode as the newKey? - think about how you define newKey
-
-            var newKey = departmentRef.push().key;
-            console.log(newKey)
+            var newKey = this.refs.department.value;
+            console.log('newKey');
 
             // Now we have a unique and specific reference to write our data. But again, think abou the database, do you want a unique key? What the database looks like?
             departmentRef.child(newKey).set(newCourse);
 
+            var newTag = tagRef.push().key;
+            console.log(newTag);
+            tagRef.child(newTag).update(newCourse);
+
             this.parent.closeCourseLabel();
 
-            var updates = {};
-            updates['/newKey/' + newCourse] = newCourse;
-            return firebase.database().ref().update(updates);
         }
 
         // if you want to set a new refernce based on the course name
@@ -74,9 +75,7 @@
 
     </style>
 
-=======
-<div class="">
-  label
-</div>
->>>>>>> origin/master
+    <div class="">
+        label
+    </div>
 </course-label>

@@ -2,9 +2,8 @@
     <div>
         <span>Course Code</span>
         <input type="text" ref="department" value="">
-        <span>Course Name</span>
+        <br>Course Name</br>
         <input type="text" ref="courseName" value="">
-
     </div>
 
     <div>
@@ -16,6 +15,13 @@
         <input type="text" ref="courseTag5" value="">
     </div>
 
+    <div>
+      <span> Tag My Course </span>
+      <input type = "text" ref = "realTag" value = "">
+      <br> Course </br>
+      <input type="text" ref="courseData" value="">
+    </div>
+
     <button type="button" onclick={ submitEvaluation }>SUBMIT</button>
 
     <div >
@@ -25,11 +31,11 @@
     <script>
         var that = this;
 
-        this.courseData = [];
+        // this.courseData = [];
 
         var database = firebase.database();
         var departmentRef = database.ref('department');
-        //Is there anything wrong here??
+
         var tagRef = database.ref('tag');
 
         submitEvaluation(event) {
@@ -48,9 +54,19 @@
             // Now we have a unique and specific reference to write our data. But again, think abou the database, do you want a unique key? What the database looks like?
             departmentRef.child(newKey).set(newCourse);
 
-            var newTag = tagRef.push().key;
-            console.log(newTag);
-            tagRef.child(newTag).update(newCourse);
+            // var newTag = tagRef.push().key;
+            // console.log(newTag);
+            // tagRef.child(newTag).update(newCourse);
+            var newTag = {};
+            var realTagRef = this.refs.realTag.value;
+            var courseDataRef = this.refs.courseData.value;
+
+            // var newTagKey = this.refs.realTag.value;
+            // console.log(newTagKey);
+            tagRef.child(newTag).update(courseDataRef);
+
+            // this.tagID = this.id;
+            // var database = firebase.database();
 
             this.parent.closeCourseLabel();
 

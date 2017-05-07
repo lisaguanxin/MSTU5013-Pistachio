@@ -72,6 +72,7 @@
 			var permaTag = "JINTAG";
 
 			var locations = {};
+
 			if (newCourse.tag1) {
 				locations[newCourse.tag1 + '/' + newCourse.courseCode] = newCourse;
 			}

@@ -17,7 +17,7 @@
 
     <div>
       <span> Tag My Course </span>
-      <input type = "text" ref = "realTag" value = "">
+      <input type = "text" ref = "mainTag" value = "">
       <br> Course </br>
       <input type="text" ref="courseData" value="">
     </div>
@@ -31,12 +31,12 @@
     <script>
         var that = this;
 
-        // this.courseData = [];
+        this.courseData = [];
 
         var database = firebase.database();
         var departmentRef = database.ref('department');
-
-        var tagRef = database.ref('tag');
+        //set where to write in the data mainTag;
+        var tagRef = database.ref('mainTag');
 
         submitEvaluation(event) {
             console.log(event)
@@ -54,12 +54,22 @@
             // Now we have a unique and specific reference to write our data. But again, think abou the database, do you want a unique key? What the database looks like?
             departmentRef.child(newKey).set(newCourse);
 
+            //why can't just put mainTag? And tagRef.child(mainTag).update(courseData);
+            var newTag = {};
+            // newTag.mainTag = this.refs.mainTag.value;
+            newTag.courseData = this.refs.courseData.value;
+            //this sets the newTagKey location to tag ref
+            var newTagKey = this.refs.mainTag.value;
+            console.log('newTagKey');
+
+            tagRef.child(newTagKey).update(newTag);
+
             // var newTag = tagRef.push().key;
             // console.log(newTag);
             // tagRef.child(newTag).update(newCourse);
-            var newTag = {};
-            var realTagRef = this.refs.realTag.value;
-            var courseDataRef = this.refs.courseData.value;
+            // var newTag = {};
+            // var realTagRef = this.refs.realTag.value;
+            // var courseDataRef = this.refs.courseData.value;
 
             // var newTagKey = this.refs.realTag.value;
             // console.log(newTagKey);
@@ -91,7 +101,4 @@
 
     </style>
 
-    <div class="">
-        label
-    </div>
 </course-label>

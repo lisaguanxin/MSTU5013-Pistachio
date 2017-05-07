@@ -12,6 +12,7 @@
         </button>
         <course-label if={courseLabel}></course-label>
     </div>
+
     <!-- javascript  -->
     <script>
         var that = this;
@@ -24,11 +25,26 @@
             that.courseLabel = false;
             that.update();
         };
+
+        //read the data on the tag load
+        var database = firebase.database();
+        var departmentRef = database.ref('department');
+        var tagRef = database.ref('mainTag');
+
         this.courseData = [];
         firebase.database().ref('department').on('value', function (snapshot) {
             console.log(snapshot.val());
-            // var list = []; snapshot.forEach(function (thing) {     list.push(thing.val()); }); that.courseList = course - list; that.upadate();
+
+
+        tagRef.on('value',function(snapshot){
+          var data = snapshot.val();
+
+          for (var key in data){
+            courseData.push(data[key]);
+          }
         });
+            // var list = []; snapshot.forEach(function (thing) {     list.push(thing.val()); }); that.courseList = course - list; that.upadate();
+});
     </script>
     <style></style>
 </course-app>

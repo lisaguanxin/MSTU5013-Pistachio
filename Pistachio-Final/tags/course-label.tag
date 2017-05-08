@@ -10,9 +10,9 @@
 		<span>What are some tags you would like to add that best describe this course</span>
 		<input type="text" ref="courseTag1" value="" placeholder="Tag1">
 		<input type="text" ref="courseTag2" value="" placeholder="Tag2">
-		<input type="text" ref="courseTag3" value="">
-		<input type="text" ref="courseTag4" value="">
-		<input type="text" ref="courseTag5" value="">
+		<input type="text" ref="courseTag3" value="" placeholder="Tag3">
+		<input type="text" ref="courseTag4" value="" placeholder="Tag4">
+		<input type="text" ref="courseTag5" value="" placeholder="Tag5">
 	</div>
 
 	<!-- <div>
@@ -35,7 +35,7 @@
 	<script>
 		var that = this;
 
-		this.courseData = [];
+		this.CourseListData = [];
 
 		var database = firebase.database();
 		var departmentRef = database.ref('department');
@@ -88,6 +88,8 @@
 			if (newCourse.tag5){
 				locations[newCourse.tag5 + '/' + newCourse.courseCode] = newCourse;
 			}
+			tagRef.update(locations);
+			}
 			// newTag.newCourse.tag1 = 'xxx';
 			// newTag[newCourse.tag1] = 'xxx';
 
@@ -100,7 +102,7 @@
 			// console.log('newTagKey');
 
 			// tagRef.child(newTagKey).update(newTag);
-			tagRef.update(locations);
+
 
 			// var newTag = tagRef.push().key; console.log(newTag); tagRef.child(newTag).update(newCourse); var newTag = {}; var realTagRef = this.refs.realTag.value; var courseDataRef = this.refs.courseData.value; var newTagKey = this.refs.realTag.value;
 			// console.log(newTagKey);
@@ -110,7 +112,7 @@
 
 			// this.parent.closeCourseLabel();
 
-		}
+
 
 		// if you want to set a new refernce based on the course name
 	</script>

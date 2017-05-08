@@ -1,4 +1,4 @@
-body {
+/*body {
     text-align: center;
     background-color: lightblue;
 }
@@ -6,4 +6,29 @@ body {
 h1 {
     color: navy;
     margin-left: 20px;
+}*/
+
+body {
+text-align: center;
+background-size: cover;
+background-color: #F0F8FF;
+/*background-image: url("BigTCBuildingStretch.jpg");*/
+background-repeat: no-repeat;
+}
+
+.sitetitle {
+color: navy;
+margin-left: 20px;
+font-size: 50px
+}
+.sitesubtitle {
+color: navy;
+margin-left: 20px;
+font-size: 30px
+}
+
+.tagtitle {
+color: navy;
+margin-left: 20px;
+font-size: 30px
 }

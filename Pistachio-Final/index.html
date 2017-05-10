@@ -2,50 +2,49 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<title>Document</title>
-<link rel="stylesheet" href="/pistachio.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/pistachio.css">
 </head>
 
 <body>
-<h1 class="sitetitle">WELCOME TO COURSE SEARCH</h1>
-<p class="sitesubtitle">You can search Teachers College courses by your interests</p>
+    <h1>Search Page</h1>
+    <p>search by interest</p>
 
-<!-- BOOTSTRAP Things -->
-<div class="container">
-<div class="row">
-<div class="col-md-12">
+    <!-- BOOTSTRAP Things -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
 
-<course-app></course-app>
+    <course-app></course-app>
 
-</div>
-</div>
-</div>
-<script src="https://www.gstatic.com/firebasejs/3.7.8/firebase.js"></script>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/3.7.8/firebase.js"></script>
 
-<script>
-// Initialize Firebase
-var config = {
-apiKey: "AIzaSyBKPJA1TjsGfJfUc6EquJyMK4712YsB8-E",
-authDomain: "pistachio-e53b7.firebaseapp.com",
-databaseURL: "https://pistachio-e53b7.firebaseio.com",
-projectId: "pistachio-e53b7",
-storageBucket: "pistachio-e53b7.appspot.com",
-messagingSenderId: "660787827479"
-};
-firebase.initializeApp(config);
-</script>
+    <script>
+    // Initialize Firebase
+    var config = {
+    apiKey: "AIzaSyBKPJA1TjsGfJfUc6EquJyMK4712YsB8-E",
+    authDomain: "pistachio-e53b7.firebaseapp.com",
+    databaseURL: "https://pistachio-e53b7.firebaseio.com",
+    projectId: "pistachio-e53b7",
+    storageBucket: "pistachio-e53b7.appspot.com",
+    messagingSenderId: "660787827479"
+    };
+    firebase.initializeApp(config);
+    </script>
 
-<script src="./tags/course-app.tag" type="riot/tag"></script>
-<script src="./tags/course-label.tag" type="riot/tag"></script>
-<script src="tags/course-list.tag" type="riot/tag"></script>
+    <script src="./tags/course-app.tag" type="riot/tag"></script>
+    <script src="./tags/course-label.tag" type="riot/tag"></script>
+    <script src="tags/course-list.tag" type="riot/tag"></script>
 
-<script src="https://cdn.jsdelivr.net/riot/3.1/riot+compiler.js"></script>
+    <script src="https://cdn.jsdelivr.net/riot/3.1/riot+compiler.js"></script>
 
-<script>
-riot.mount('*');
-</script>
+  <script>
+  riot.mount('*');
+  </script>
 
 </body>
 

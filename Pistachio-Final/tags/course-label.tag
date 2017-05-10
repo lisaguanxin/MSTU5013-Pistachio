@@ -120,15 +120,14 @@
 	<style>
 		:scope {
 			display: block;
-			background-color: grey;
+			background-color: lightblue;
 			color: white;
 			border: 1px solid yellow;
 			padding: 10px;
 			position: fixed;
-			right: 0;
-			bottom: 0;
+			bottom: 10;
 			width: 50%;
-			height: 600px;
+			height: 500px;
 		}
 
 	</style>
